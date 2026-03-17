@@ -10,7 +10,5 @@ class Noticia extends Model
     use HasFactory;
 
     protected $table = 'noticias';
-
- 
     public $timestamps = true; 
 }
