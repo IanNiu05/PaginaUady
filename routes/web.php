@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaginasController;
+use App\Models\Menu;
 
 // Ruta para la página de inicio
 Route::get('/', [PaginasController::class, 'inicio']);

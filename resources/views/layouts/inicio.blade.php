@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        
+        /* --- ESTILOS GLOBALES --- */
         :root {
             --azul-uady: #1b365d;
             --dorado-uady: #cda043;
@@ -167,16 +167,19 @@
     <nav>
         <div class="logo">FCA UADY</div>
         <div class="menu">
-           
-            <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">Inicio</a>
+        @foreach($menus as $menu)
+            @php
+                // Quitamos el '/' inicial para que la función Request::is() funcione correctamente
+                $rutaLimpia = ltrim($menu->ruta, '/');
+                // Comprobamos si es la ruta de inicio ('/') o cualquier otra para asignar la clase active
+                $isActive = $rutaLimpia === '' ? Request::is('/') : Request::is($rutaLimpia);
+            @endphp
             
-            <a href="{{ url('/licenciaturas') }}" class="{{ Request::is('licenciaturas') ? 'active' : '' }}">Licenciaturas</a>
-            
-            <a href="{{ url('/posgrado') }}" class="{{ Request::is('posgrado') ? 'active' : '' }}">Posgrado</a>
-            
-            <a href="{{ url('/contacto') }}" class="{{ Request::is('contacto') ? 'active' : '' }}">Contacto</a>
-        }
-        </div>
+            <a href="{{ url($menu->ruta) }}" class="{{ $isActive ? 'active' : '' }}">
+                {{ $menu->name }}
+            </a>
+        @endforeach
+    </div>
     </nav>
 
     <main>

@@ -10,7 +10,5 @@ class Noticia extends Model
    
 
     protected $table = 'noticias';
-
- 
     public $timestamps = true; 
 }
