@@ -15,7 +15,7 @@ class PaginasController extends Controller
 
     public function licenciaturas()
     {
-        // Pasamos el título para que el componente <x-header /> lo reciba
+        
         return view('licenciaturas', ['titulo' => 'Programas de Licenciatura']);
     }
 

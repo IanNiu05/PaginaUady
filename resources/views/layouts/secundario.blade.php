@@ -9,14 +9,13 @@
         :root { --azul-uady: #1b365d; --dorado-uady: #cda043; --gris-fondo: #f4f6f9; }
         body { font-family: 'Inter', sans-serif; background-color: var(--gris-fondo); margin: 0; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
 
-        /* NAVEGACIÓN PRINCIPAL */
         nav { background: var(--azul-uady); padding: 0 50px; display: flex; justify-content: space-between; align-items: center; height: 70px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .logo { color: white; font-weight: 800; font-size: 22px; }
         .menu { display: flex; gap: 15px; }
         nav a { color: white; text-decoration: none; padding: 10px 22px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: 0.3s; background: rgba(255, 255, 255, 0.05); }
         nav a:hover, nav a.active { background: var(--dorado-uady); color: var(--azul-uady); }
 
-        /* ESTRUCTURA SECUNDARIA (DOS COLUMNAS) */
+       
         .contenedor-interno { display: flex; max-width: 1200px; margin: 40px auto; gap: 30px; padding: 0 20px; flex: 1; width: 100%; box-sizing: border-box; }
         .menu-lateral { width: 250px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: fit-content; }
         .menu-lateral h3 { color: var(--azul-uady); border-bottom: 2px solid var(--dorado-uady); padding-bottom: 10px; margin-top: 0; }

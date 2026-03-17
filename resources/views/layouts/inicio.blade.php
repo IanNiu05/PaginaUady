@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- ESTILOS GLOBALÉES --- */
+        
         :root {
             --azul-uady: #1b365d;
             --dorado-uady: #cda043;
@@ -26,7 +26,7 @@
             min-height: 100vh;
         }
 
-        /* --- NAVEGACIÓN --- */
+        
         nav {
             background: var(--azul-uady);
             padding: 1rem 50px;
@@ -57,10 +57,10 @@
             transform: translateY(-2px);
         }
 
-        /* --- CONTENIDO PRINCIPAL --- */
+       
         main { flex: 1; }
 
-        /* Estilos del Banner (Componente x-hero) */
+      
         .banner {
             background-image: linear-gradient(rgba(27, 54, 93, 0.8), rgba(27, 54, 93, 0.8)),
                               url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=1500&q=80');
@@ -80,7 +80,7 @@
             line-height: 1.2;
         }
 
-        /* Estilos de la Sección de Noticias */
+       
         .titulo-seccion { 
             text-align: center; 
             color: var(--azul-uady); 
@@ -98,7 +98,7 @@
             margin: 0 auto;
         }
 
-        /* --- ESTILOS DE LA TARJETA (Componente x-card) --- */
+      
         .tarjeta {
             background: white;
             border-radius: 12px;
@@ -112,7 +112,7 @@
 
         .tarjeta:hover { transform: translateY(-8px); }
         
-        /* Imagen arriba con altura fija */
+       
         .tarjeta-img { 
             height: 180px; 
             background: #e2e8f0; 
@@ -120,7 +120,7 @@
             width: 100%;
         }
         
-        /* Texto abajo */
+     
         .tarjeta-body { 
             padding: 20px; 
             display: flex; 
@@ -147,7 +147,7 @@
 
         .tarjeta-texto { font-size: 14px; color: #64748b; margin-bottom: 20px; flex-grow: 1; }
         
-        /* Estilos del botón para el slot */
+      
         .btn-leer {
             align-self: flex-start;
             background: var(--azul-uady);
@@ -167,7 +167,7 @@
     <nav>
         <div class="logo">FCA UADY</div>
         <div class="menu">
-            {{-- Usamos url('/') para que Laravel sepa a dónde ir exactamente --}}
+           
             <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">Inicio</a>
             
             <a href="{{ url('/licenciaturas') }}" class="{{ Request::is('licenciaturas') ? 'active' : '' }}">Licenciaturas</a>
