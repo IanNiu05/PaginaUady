@@ -6,7 +6,7 @@
     <title>@yield('titulo', 'FCA UADY')</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- ESTILOS GLOBALES --- */
+     
         :root {
             --azul-uady: #1b365d;
             --dorado-uady: #cda043;
@@ -25,7 +25,7 @@
 
         main { flex: 1; }
 
-        /* Estilos de Noticias (Tarjetas) */
+      
         .titulo-seccion { 
             text-align: center; color: var(--azul-uady); font-size: 28px; margin: 50px 0 30px; font-weight: 700;
         }
@@ -47,164 +47,56 @@
         .btn-leer { align-self: flex-start; background: var(--azul-uady); color: white; padding: 8px 20px; border-radius: 6px; font-size: 12px; text-decoration: none; transition: 0.3s; }
         .btn-leer:hover { background: var(--dorado-uady); color: white; }
 
-        /* Estilos para Accesos Rápidos (Diseño de Píldoras Horizontales) */
-        .acceso-pildora {
-            background: var(--azul-uady);
-        
-        nav {
-            background: var(--azul-uady);
-            padding: 1rem 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo { color: white; font-weight: 800; font-size: 22px; letter-spacing: 1px; }
-
-        .menu { display: flex; gap: 15px; }
-
-        nav a {
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(27, 54, 93, 0.15);
-        }
-        
-        .acceso-pildora:hover {
-            background: var(--dorado-uady);
-            color: var(--azul-uady);
-            transform: translateX(5px);
-            box-shadow: -5px 8px 15px rgba(205, 160, 67, 0.2);
-        }
-        
-        .acceso-icono-pildora {
-            font-size: 26px;
-            background: rgba(255, 255, 255, 0.1);
-            min-width: 50px;
-            height: 50px;
-            transform: translateY(-2px);
-        }
-
        
-        main { flex: 1; }
+       .acceso-pildora, .acceso-pildora:visited {
+    background: var(--azul-uady);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(27, 54, 93, 0.15);
+}
 
-      
-        .banner {
-            background-image: linear-gradient(rgba(27, 54, 93, 0.8), rgba(27, 54, 93, 0.8)),
-                              url('https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
+.acceso-pildora:visited h3, 
+.acceso-pildora:visited p {
+    color: white;
+}
 
-        .acceso-pildora:hover .acceso-icono-pildora {
-            background: rgba(27, 54, 93, 0.1);
-        }
+.acceso-pildora:hover {
+    background: var(--dorado-uady);
+    color: var(--azul-uady);
+    transform: translateX(5px);
+    box-shadow: -5px 8px 15px rgba(205, 160, 67, 0.2);
+}
 
-        @media (max-width: 768px) {
-            .contenedor-tarjetas { padding: 0 20px 30px; }
-        }
-            text-align: center;
-        }
+.acceso-pildora:hover h3, 
+.acceso-pildora:hover p {
+    color: var(--azul-uady);
+}
 
-        .banner h1 {
-            font-size: 42px;
-            color: white;
-            margin: 0;
-            line-height: 1.2;
-        }
+.acceso-icono-pildora {
+    font-size: 26px;
+    background: rgba(255, 255, 255, 0.1);
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
 
-       
-        .titulo-seccion { 
-            text-align: center; 
-            color: var(--azul-uady); 
-            font-size: 28px; 
-            margin: 50px 0 30px; 
-            font-weight: 700;
-        }
+.acceso-pildora:hover .acceso-icono-pildora {
+    background: rgba(27, 54, 93, 0.1);
+}
 
-        .contenedor-tarjetas { 
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            padding: 0 50px 50px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-      
-        .tarjeta {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #eee;
-        }
-
-        .tarjeta:hover { transform: translateY(-8px); }
-        
-       
-        .tarjeta-img { 
-            height: 180px; 
-            background: #e2e8f0; 
-            object-fit: cover; 
-            width: 100%;
-        }
-        
-     
-        .tarjeta-body { 
-            padding: 20px; 
-            display: flex; 
-            flex-direction: column; 
-            flex-grow: 1; 
-        }
-        
-        .fecha { 
-            color: var(--dorado-uady); 
-            font-size: 11px; 
-            font-weight: 700; 
-            margin-bottom: 8px; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-        }
-
-        .tarjeta-titulo { 
-            font-size: 16px; 
-            font-weight: 700; 
-            color: var(--azul-uady); 
-            margin: 0 0 10px 0; 
-            line-height: 1.4; 
-        }
-
-        .tarjeta-texto { font-size: 14px; color: #64748b; margin-bottom: 20px; flex-grow: 1; }
-        
-      
-        .btn-leer {
-            align-self: flex-start;
-            background: var(--azul-uady);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 12px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .btn-leer:hover { background: var(--dorado-uady); color: white; }
+@media (max-width: 768px) {
+    .contenedor-tarjetas { padding: 0 20px 30px; }
+}
     </style>
 </head>
 <body>
