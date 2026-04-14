@@ -6,7 +6,7 @@
     <title>@yield('titulo', 'FCA UADY')</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- ESTILOS GLOBALES --- */
+     
         :root {
             --azul-uady: #1b365d;
             --dorado-uady: #cda043;
@@ -25,7 +25,7 @@
 
         main { flex: 1; }
 
-        /* Estilos de Noticias (Tarjetas) */
+      
         .titulo-seccion { 
             text-align: center; color: var(--azul-uady); font-size: 28px; margin: 50px 0 30px; font-weight: 700;
         }
@@ -47,7 +47,7 @@
         .btn-leer { align-self: flex-start; background: var(--azul-uady); color: white; padding: 8px 20px; border-radius: 6px; font-size: 12px; text-decoration: none; transition: 0.3s; }
         .btn-leer:hover { background: var(--dorado-uady); color: white; }
 
-        /* Estilos para Accesos Rápidos (Diseño de Píldoras Horizontales) */
+       
        .acceso-pildora, .acceso-pildora:visited {
     background: var(--azul-uady);
     color: white;
