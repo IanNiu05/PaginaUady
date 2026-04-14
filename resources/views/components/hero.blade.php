@@ -1,4 +1,5 @@
 @props(['imagen'])
 
-<div class="banner" style="background-image: url('{{ asset($imagen) }}');">
+<div style="width: 100%;">
+    <img src="{{ asset($imagen) }}" style="width: 100%; height: auto; display: block;">
 </div>
