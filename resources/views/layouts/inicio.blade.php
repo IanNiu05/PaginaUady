@@ -48,45 +48,55 @@
         .btn-leer:hover { background: var(--dorado-uady); color: white; }
 
         /* Estilos para Accesos Rápidos (Diseño de Píldoras Horizontales) */
-        .acceso-pildora {
-            background: var(--azul-uady);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(27, 54, 93, 0.15);
-        }
-        
-        .acceso-pildora:hover {
-            background: var(--dorado-uady);
-            color: var(--azul-uady);
-            transform: translateX(5px);
-            box-shadow: -5px 8px 15px rgba(205, 160, 67, 0.2);
-        }
-        
-        .acceso-icono-pildora {
-            font-size: 26px;
-            background: rgba(255, 255, 255, 0.1);
-            min-width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
+       .acceso-pildora, .acceso-pildora:visited {
+    background: var(--azul-uady);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(27, 54, 93, 0.15);
+}
 
-        .acceso-pildora:hover .acceso-icono-pildora {
-            background: rgba(27, 54, 93, 0.1);
-        }
+.acceso-pildora:visited h3, 
+.acceso-pildora:visited p {
+    color: white;
+}
 
-        @media (max-width: 768px) {
-            .contenedor-tarjetas { padding: 0 20px 30px; }
-        }
+.acceso-pildora:hover {
+    background: var(--dorado-uady);
+    color: var(--azul-uady);
+    transform: translateX(5px);
+    box-shadow: -5px 8px 15px rgba(205, 160, 67, 0.2);
+}
+
+.acceso-pildora:hover h3, 
+.acceso-pildora:hover p {
+    color: var(--azul-uady);
+}
+
+.acceso-icono-pildora {
+    font-size: 26px;
+    background: rgba(255, 255, 255, 0.1);
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.acceso-pildora:hover .acceso-icono-pildora {
+    background: rgba(27, 54, 93, 0.1);
+}
+
+@media (max-width: 768px) {
+    .contenedor-tarjetas { padding: 0 20px 30px; }
+}
     </style>
 </head>
 <body>
