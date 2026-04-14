@@ -15,3 +15,5 @@ Route::get('/posgrado', [PaginasController::class, 'posgrado']);
 
 // Ruta para contacto
 Route::get('/contacto', [PaginasController::class, 'contacto']);
+
+Route::get('/bolsa-de-trabajo', [App\Http\Controllers\PaginasController::class, 'bolsaTrabajo']);
