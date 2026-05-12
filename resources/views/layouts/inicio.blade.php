@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'FCA UADY')</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
+
+    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}?v={{ time() }}">
+<style>
      
         :root {
             --azul-uady: #1b365d;

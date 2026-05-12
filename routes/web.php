@@ -17,3 +17,5 @@ Route::get('/posgrado', [PaginasController::class, 'posgrado']);
 Route::get('/contacto', [PaginasController::class, 'contacto']);
 
 Route::get('/bolsa-de-trabajo', [App\Http\Controllers\PaginasController::class, 'bolsaTrabajo']);
+
+Route::get('/noticia/{id}', [App\Http\Controllers\PaginasController::class, 'mostrar'])->name('noticia.mostrar');

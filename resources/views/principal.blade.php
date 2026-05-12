@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-    <x-hero imagen="img/noticias/fachada.jpg" />
+    <x-hero :banners="$banners" />
 
     <h2 class="titulo-seccion">Noticias Recientes</h2>
 
@@ -16,7 +16,8 @@
                 titulo="{{ $noticia->titulo }}"
                 texto="{{ $noticia->texto }}"
             >
-                <x-boton ruta="{{ url('/contacto') }}" color="azul">
+               
+                <x-boton ruta="{{ route('noticia.mostrar', $noticia->id) }}" color="azul">
                     Más información
                 </x-boton>
             </x-card>
