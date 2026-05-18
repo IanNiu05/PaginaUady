@@ -133,6 +133,9 @@ class DatabaseSeeder extends Seeder
         // Vacantes de Bolsa de Trabajo
         \App\Models\Vacante::factory(20)->create();
 
+        // Seeder de licenciaturas
+        $this->call(LicenciaturaSeeder::class);
+
 
 
     }

@@ -7,8 +7,12 @@ use App\Models\Menu;
 // Ruta para la página de inicio
 Route::get('/', [PaginasController::class, 'inicio']);
 
-// Ruta para licenciaturas
-Route::get('/licenciaturas', [PaginasController::class, 'licenciaturas']);
+// Ruta para ver los detalles de las noticias
+Route::get('/noticias/{id}', [PaginasController::class, 'mostrar'])->name('noticia.mostrar');
+
+// Rutas para licenciaturas (vista general y vista de detalle)
+Route::get('/licenciaturas', [PaginasController::class, 'licenciaturas'])->name('licenciaturas');
+Route::get('/licenciaturas/{slug}', [PaginasController::class, 'detalleLicenciatura'])->name('licenciaturas.detalle');
 
 // Ruta para posgrado
 Route::get('/posgrado', [PaginasController::class, 'posgrado']);
@@ -16,6 +20,5 @@ Route::get('/posgrado', [PaginasController::class, 'posgrado']);
 // Ruta para contacto
 Route::get('/contacto', [PaginasController::class, 'contacto']);
 
-Route::get('/bolsa-de-trabajo', [App\Http\Controllers\PaginasController::class, 'bolsaTrabajo']);
-
-Route::get('/noticia/{id}', [App\Http\Controllers\PaginasController::class, 'mostrar'])->name('noticia.mostrar');
+// Ruta para bolsa
+Route::get('/bolsa-de-trabajo', [PaginasController::class, 'bolsaTrabajo']);

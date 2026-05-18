@@ -1,111 +1,88 @@
 @extends('layouts.secundario')
 
-@section('titulo', 'Licenciaturas - FCA')
+@section('titulo', 'Licenciaturas - FCA UADY')
 
 @section('contenido')
-<div style="padding: 20px;">
-  
-    
-    <div style="margin-bottom: 35px;">
-        <h1 style="color: #1b365d; margin: 0; font-size: 2.2rem; font-weight: bold;">Programas de Licenciatura</h1>
-        <p style="color: #64748b; margin-top: 10px; font-size: 1.1rem;">Formamos profesionales líderes con valores éticos y visión global.</p>
-        <div style="width: 100px; height: 4px; background: #cda043; margin-top: 15px; border-radius: 2px;"></div>
-    </div>
-
-    
-    <div class="mosaico-carreras">
+    <div style="max-width: 1000px; margin: 0 auto; font-family: 'Inter', sans-serif;">
         
-        <a href="#" class="tarjeta-carrera">
-            <div class="info-wrap">
-                <span class="nombre-carrera">Contaduría</span>
-            </div>
-            <div class="boton-mas">Ver detalles →</div>
-        </a>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #1b365d; border-bottom: 3px solid #cda043; padding-bottom: 10px; display: inline-block; font-size: 28px; font-weight: 800; text-transform: uppercase; margin-top: 0;">
+                Programas de Licenciatura
+            </h2>
+            <p style="color: #666; font-size: 16px; margin-top: 10px; font-weight: 400;">
+                Formamos profesionales líderes con valores éticos y visión global.
+            </p>
+        </div>
 
-        <a href="#" class="tarjeta-carrera">
-            <div class="info-wrap">
-                <span class="nombre-carrera">Administración de Empresas</span>
-            </div>
-            <div class="boton-mas">Ver detalles →</div>
-        </a>
+        <div style="display: flex; flex-direction: column; gap: 40px; margin-top: 20px;">
+            @foreach($licenciaturas as $licenciatura)
+    
+                <div class="fade-in-card" style="display: flex; flex-direction: {{ $loop->index % 2 !== 0 ? 'row-reverse' : 'row' }}; align-items: center; gap: 30px; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #eef0f3;">
+                    
+                    <div style="flex: 1; position: relative; height: 240px; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <img src="{{ asset('img/' . $licenciatura->imagen) }}" alt="{{ $licenciatura->nombre }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(27, 54, 93, 0.65);"></div>
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 15px; box-sizing: border-box;">
+                            <h3 style="color: #ffffff; font-size: 20px; font-weight: 700; text-align: center; text-transform: uppercase; margin: 0; letter-spacing: 0.5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                                {{ $licenciatura->nombre }}
+                            </h3>
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 180px; padding: 5px 0;">
+                        <div>
+                            <p style="color: #333333; font-size: 15px; line-height: 1.6; margin: 0; text-align: justify;">
+                                {{ $licenciatura->descripcion_corta }}
+                            </p>
+                        </div>
+                        
+                        <div style="text-align: {{ $loop->index % 2 !== 0 ? 'left' : 'right' }}; margin-top: 15px;">
+                            <a href="{{ route('licenciaturas.detalle', $licenciatura->slug) }}" style="display: inline-block; background-color: #1b365d; color: #ffffff; font-weight: bold; font-size: 13px; text-transform: uppercase; padding: 10px 20px; text-decoration: none; border-radius: 4px; border-bottom: 3px solid #cda043; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                Ver más detalles
+                            </a>
+                        </div>
+                    </div>
 
-        <a href="#" class="tarjeta-carrera">
-            <div class="info-wrap">
-                <span class="nombre-carrera">Mercadotecnia</span>
-            </div>
-            <div class="boton-mas">Ver detalles →</div>
-        </a>
-
-        <a href="#" class="tarjeta-carrera">
-            <div class="info-wrap">
-                <span class="nombre-carrera">Administración de Tecnologías de la Información</span>
-            </div>
-            <div class="boton-mas">Ver detalles →</div>
-        </a>
+                </div>
+            @endforeach
+        </div>
 
     </div>
-</div>
 
-<style>
-    .mosaico-carreras {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 25px;
-    }
-
-    .tarjeta-carrera {
-        text-decoration: none;
-        background: #ffffff;
-        aspect-ratio: 1 / 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        border-radius: 12px;
-        border: 2px solid #f1f5f9;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        padding: 30px;
-    }
-
-    .tarjeta-carrera:hover {
-        transform: translateY(-8px);
-        border-color: #1b365d;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    }
-
-    .nombre-carrera {
-        color: #1b365d;
-        font-weight: 700;
-        font-size: 1.3rem;
-        line-height: 1.2;
-        text-transform: uppercase; 
-    }
-
-    .boton-mas {
-        position: absolute;
-        bottom: -50px;
-        left: 0;
-        width: 100%;
-        background: #1b365d;
-        color: #cda043;
-        padding: 12px 0;
-        font-weight: bold;
-        font-size: 13px;
-        transition: bottom 0.3s ease;
-    }
-
-    .tarjeta-carrera:hover .boton-mas {
-        bottom: 0;
-    }
-
-    @media (max-width: 600px) {
-        .tarjeta-carrera {
-            aspect-ratio: auto;
-            min-height: 180px;
+    <style>
+        .fade-in-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
         }
-    }
-</style>
+        .fade-in-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tarjetas = document.querySelectorAll('.fade-in-card');
+            
+            const opciones = {
+                root: null, 
+                threshold: 0.15 
+            };
+
+            const observador = new IntersectionObserver(function(entradas, observador) {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                        observador.unobserve(entrada.target);
+                    }
+                });
+            }, opciones);
+
+            tarjetas.forEach(tarjeta => {
+                observador.observe(tarjeta);
+            });
+        });
+    </script>
 @endsection

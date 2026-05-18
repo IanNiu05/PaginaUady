@@ -21,15 +21,8 @@
 </head>
 <body>
     <x-navbar :menus="$menus" />
-    <x-header :titulo="$titulo ?? 'Sección FCA'" />
+    
     <div class="contenedor-interno">
-        <aside class="menu-lateral">
-            <h3>Secciones</h3>
-            <a href="{{ url('/') }}">← Volver al Inicio</a>
-            <a href="{{ url('/licenciaturas') }}">Licenciaturas</a>
-            <a href="#">Trámites Escolares</a>
-            <a href="#">Servicio Social</a>
-        </aside>
         <main class="contenido-principal">
             @yield('contenido')
         </main>

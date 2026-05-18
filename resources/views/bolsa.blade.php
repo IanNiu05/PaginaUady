@@ -16,8 +16,9 @@
                         <h3 style="margin: 0; color: var(--azul-uady); font-size: 18px;">{{ $vacante->puesto }}</h3>
                         <p style="margin: 5px 0; color: var(--dorado-uady); font-weight: 600; font-size: 14px;">{{ $vacante->empresa }}</p>
                     </div>
-                    <span style="background: #f1f5f9; color: #475569; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">
-                        ${{ number_format($vacante->salario, 0) }}
+                    
+                    <span style="color: var(--dorado-uady); font-size: 22px; font-weight: 800; white-space: nowrap;">
+                        ${{ number_format($vacante->salario, 0) }} <span style="font-size: 12px; color: #64748b; font-weight: 600;">M.N.</span>
                     </span>
                 </div>
 

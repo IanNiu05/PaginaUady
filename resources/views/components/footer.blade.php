@@ -3,6 +3,7 @@
 <footer style="margin-top: auto; font-family: 'Inter', sans-serif;">
     
     <div style="background-color: var(--azul-uady); color: white; padding: 40px 50px;">
+        
         <div style="max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; align-items: center;">
             
             <div>
@@ -40,23 +41,22 @@
             </div>
 
         </div>
-    </div>
 
-    <div style="background-color: white; color: #333; padding: 25px 50px; border-top: 1px solid #e2e8f0;">
-        <div style="max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+        <div style="max-width: 1300px; margin: 30px auto 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 25px;">
             
             <div style="display: flex; align-items: center; gap: 10px;">
                 <div style="width: 35px; height: 35px; background: #601826; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px;">C</div>
                 <div>
-                    <strong style="color: #601826; font-size: 15px; display: block; line-height: 1.1;">Contralores<br>Sociales</strong>
-                    <span style="font-size: 9px; color: #666; text-transform: uppercase;">Guardianes del gasto público</span>
+                    <strong style="color: white; font-size: 15px; display: block; line-height: 1.1;">Contralores<br>Sociales</strong>
+                    <span style="font-size: 9px; color: #cbd5e1; text-transform: uppercase;">Guardianes del gasto público</span>
                 </div>
             </div>
 
-            <div style="flex: 1; text-align: center; font-size: 12px; color: #475569; max-width: 800px; margin: 0 auto;">
+            <div style="flex: 1; text-align: center; font-size: 12px; color: #cbd5e1; max-width: 800px; margin: 0 auto;">
                 Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica, de otra forma requiere permiso previo por escrito de la institución.
             </div>
             
         </div>
+
     </div>
 </footer>
