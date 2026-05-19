@@ -22,3 +22,5 @@ Route::get('/contacto', [PaginasController::class, 'contacto']);
 
 // Ruta para bolsa
 Route::get('/bolsa-de-trabajo', [PaginasController::class, 'bolsaTrabajo']);
+
+

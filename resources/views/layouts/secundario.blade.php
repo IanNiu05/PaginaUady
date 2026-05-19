@@ -27,6 +27,8 @@
             @yield('contenido')
         </main>
     </div>
-    <x-footer />
+    
+    {{-- MODIFICADO: Ahora le pasamos la variable $infoFooter asignada al atributo :datos del componente --}}
+    <x-footer :datos="$infoFooter" />
 </body>
 </html>

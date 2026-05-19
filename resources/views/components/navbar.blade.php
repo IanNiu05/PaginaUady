@@ -26,22 +26,33 @@
                             {{ $menu->name }} <small>▼</small>
                         </a>
                         <div class="dropdown-content">
-                        <a href="{{ url('/licenciaturas/contador-publico') }}">Contador Público</a>
-                        <a href="{{ url('/licenciaturas/administracion') }}">Administración</a>
-                        <a href="{{ url('/licenciaturas/mercadotecnia-y-negocios-internacionales') }}">Mercadotecnia y Negocios Internacionales</a>
-                        <a href="{{ url('/licenciaturas/administracion-de-tecnologias-de-informacion') }}">Administración de TI</a>
-                    </div>
+                            <a href="{{ url('/licenciaturas/contador-publico') }}">Contador Público</a>
+                            <a href="{{ url('/licenciaturas/administracion') }}">Administración</a>
+                            <a href="{{ url('/licenciaturas/mercadotecnia-y-negocios-internacionales') }}">Mercadotecnia y Negocios Internacionales</a>
+                            <a href="{{ url('/licenciaturas/administracion-de-tecnologias-de-informacion') }}">Administración de TI</a>
+                        </div>
                     </div>
                 @elseif(strtolower($menu->name) == 'posgrado')
                     <div class="dropdown">
-                    <a href="{{ url($menu->ruta) }}" class="{{ $isActive ? 'active' : '' }}">
-                        {{ $menu->name }} <small>▼</small>
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="{{ url('/posgrado#maestrias') }}">Maestrías</a>
-                        <a href="{{ url('/posgrado#doctorados') }}">Doctorados</a>
+                        <a href="{{ url($menu->ruta) }}" class="{{ $isActive ? 'active' : '' }}">
+                            {{ $menu->name }} <small>▼</small>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url('/posgrado#maestrias') }}">Maestrías</a>
+                            <a href="{{ url('/posgrado#doctorados') }}">Doctorados</a>
+                        </div>
                     </div>
-                </div>
+                {{-- Apartado de servicios --}}
+                @elseif(strtolower($menu->name) == 'servicios')
+                    <div class="dropdown">
+                        <a href="#" class="{{ Request::is('tramites-escolares*') || Request::is('bolsa-de-trabajo*') ? 'active' : '' }}">
+                            {{ $menu->name }} <small>▼</small>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="{{ url('/tramites-escolares') }}">Trámites escolares</a>
+                            <a href="{{ url('/bolsa-de-trabajo') }}">Bolsa de trabajo</a>
+                        </div>
+                    </div>
                 @else
                     <a href="{{ url($menu->ruta) }}" class="{{ $isActive ? 'active' : '' }}">
                         {{ $menu->name }}

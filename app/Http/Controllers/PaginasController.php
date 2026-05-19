@@ -80,4 +80,6 @@ class PaginasController extends Controller
         $infoFooter = InfoFooter::all();
         return view('contacto', compact('menus', 'infoFooter'));
     }
+
+    
 }

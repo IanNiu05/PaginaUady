@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo', 'FCA UADY')</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}?v={{ time() }}">
+    <link class="image-remove-attribute" rel="stylesheet" href="{{ asset('css/estilos.css') }}?v={{ time() }}">
 <style>
      
         :root {
@@ -137,21 +137,19 @@
                     @endif
                 </div>
                 
-                <div style="flex: 1 1 35%; min-width: 300px; background: white; border-radius: 8px; border: 1px solid #ddd; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
-                    <div style="padding: 15px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px;">
-                        <img src="{{ asset('img/logo.jpg') }}" alt="UADY" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
-                        <div>
-                            <strong style="color: var(--azul-uady); font-size: 14px;">Universidad Autónoma de Yucatán UADY</strong>
-                            <div style="font-size: 12px; color: #666;">hace 38 minutos</div>
-                        </div>
-                    </div>
-                    <div style="padding: 20px; flex: 1; background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                        @if(isset($multimedia))
-                            <p style="font-size: 13px; color: #555; margin-bottom: 15px;">{{ $multimedia->fb_post_text }}</p>
-                            <a href="{{ $multimedia->fb_post_url }}" target="_blank" style="color: #1877f2; text-decoration: none; font-weight: bold; font-size: 14px;">Ver publicación en Facebook</a>
-                        @endif
-                    </div>
-                </div>
+            <div style="flex: 1 1 35%; min-width: 300px; background: white; border-radius: 8px; border: 1px solid #ddd; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; height: 380px; justify-content: flex-start; align-items: center;">
+    
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffca.uady.mx%2F&tabs=timeline&width=450&height=430&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" 
+        width="100%" 
+        height="430" 
+        style="border:none; overflow:hidden; border-radius: 8px; max-width: 450px; margin-top: -10px;" 
+        scrolling="no" 
+        frameborder="0" 
+        allowfullscreen="true" 
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+    </iframe>
+
+</div>
 
             </div>
         </div>

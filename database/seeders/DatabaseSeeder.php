@@ -69,7 +69,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Multimedia::create([
             'youtube_id' => 'WHf1TsswVuU', 
             'fb_post_text' => 'La Universidad Autónoma de Yucatán convoca a proponer candidatos a la Medalla "Eligio Ancona" 2026. Este reconocimiento se otorga a yucatecos destacados en la cultura y las artes.',
-            'fb_post_url' => 'https://www.facebook.com/UADYoficial'
+            'fb_post_url' => 'https://www.facebook.com/fca.uady.mx/?locale=es_LA'
         ]);
 
         // Noticias
@@ -105,6 +105,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Menu::create(['name' => 'Inicio', 'ruta' => '/']);
         \App\Models\Menu::create(['name' => 'Licenciaturas', 'ruta' => '/licenciaturas']);
         \App\Models\Menu::create(['name' => 'Posgrado', 'ruta' => '/posgrado']);
+        \App\Models\Menu::create(['name' => 'Servicios', 'ruta' => '/servicios']);
         \App\Models\Menu::create(['name' => 'Contacto', 'ruta' => '/contacto']);
 
         // Datos para el Footer
