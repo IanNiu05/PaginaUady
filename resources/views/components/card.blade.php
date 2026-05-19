@@ -8,7 +8,9 @@
     <div class="tarjeta-body">
         <div class="fecha">{{ $fecha }}</div>
         <h3 class="tarjeta-titulo">{{ $titulo }}</h3>
-        <p class="tarjeta-texto">{{ $texto }}</p>
+        <p class="tarjeta-texto">
+           {!! \Illuminate\Support\Str::limit(e($texto), 100, '...') !!}
+        </p>
         
         <div style="margin-top: auto; position: relative; z-index: 10;">
             {{ $slot }}

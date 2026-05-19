@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Noticia;
 use App\Models\AccesoRapido;
-use App\Models\Multimedia;
+use App\Models\Menu;
 use App\Models\InfoFooter;
-use App\Models\Vacante; 
+use App\Models\Multimedia;
+use App\Models\Vacante;
+use App\Models\Licenciatura;
+use App\Models\Programa;
 
 class PaginasController extends Controller
 {
@@ -16,31 +19,67 @@ class PaginasController extends Controller
         $noticias = Noticia::all();
         $accesos = AccesoRapido::all();
         $multimedia = Multimedia::first();
-        $infoFooter = InfoFooter::all(); // Jalamos los datos del footer
+        $infoFooter = InfoFooter::all();
+        $menus = Menu::all();
+        
+        // Pasamos las noticias como $banners para que el carrusel tenga imágenes
+        $banners = Noticia::all(); 
 
-        // Pasamos TODO a la vista
-        return view('principal', compact('noticias', 'accesos', 'multimedia', 'infoFooter'));
+        return view('principal', compact('noticias', 'accesos', 'multimedia', 'infoFooter', 'menus', 'banners'));
+    }
+
+    public function mostrar($id)
+    {
+        $noticia = Noticia::findOrFail($id);
+        $menus = Menu::all();
+        $infoFooter = InfoFooter::all();
+        return view('noticia_detalle', compact('noticia', 'menus', 'infoFooter'));
     }
 
     public function licenciaturas()
     {
-        return view('licenciaturas', ['titulo' => 'Programas de Licenciatura']);
+        $menus = Menu::all();
+        $infoFooter = InfoFooter::all();
+        $titulo = 'Licenciaturas';
+        // Traemos las carreras dinámicas
+        $licenciaturas = Licenciatura::all(); 
+
+        return view('licenciaturas', compact('menus', 'infoFooter', 'licenciaturas'));
+    }
+
+    public function detalleLicenciatura($slug)
+    {
+        $menus = Menu::all();
+        $infoFooter = InfoFooter::all();
+        $licenciatura = Licenciatura::where('slug', $slug)->firstOrFail();
+        $titulo = $licenciatura->nombre;
+
+        return view('detalle_licenciatura', compact('menus', 'infoFooter', 'licenciatura','titulo'));
     }
 
     public function posgrado()
     {
-        return view('posgrado', ['titulo' => 'Especializaciones y Posgrados']);
+        $menus = Menu::all();
+        $infoFooter = InfoFooter::all();
+        $maestrias = Programa::where('tipo', 'Maestría')->get();
+        $doctorados = Programa::where('tipo', 'Doctorado')->get();
+        return view('posgrado', compact('menus', 'infoFooter', 'maestrias','doctorados'));
+    }
+
+    public function bolsaTrabajo()
+    {
+        $menus = Menu::all();
+        $infoFooter = InfoFooter::all();
+        $vacantes = Vacante::latest()->get(); 
+        return view('bolsa', compact('menus', 'infoFooter', 'vacantes'));
     }
 
     public function contacto()
     {
-        return view('contacto', ['titulo' => 'Ponte en Contacto']);
+        $menus = Menu::all();
+        $infoFooter = InfoFooter::all();
+        return view('contacto', compact('menus', 'infoFooter'));
     }
-    public function bolsaTrabajo()
-    {
-        
-        $vacantes = Vacante::latest()->get(); 
-        
-        return view('bolsa', compact('vacantes'));
-    }
+
+    
 }
