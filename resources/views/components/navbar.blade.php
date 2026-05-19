@@ -42,7 +42,6 @@
                             <a href="{{ url('/posgrado#doctorados') }}">Doctorados</a>
                         </div>
                     </div>
-                {{-- Apartado de servicios --}}
                 @elseif(strtolower($menu->name) == 'servicios')
                     <div class="dropdown">
                         <a href="#" class="{{ Request::is('tramites-escolares*') || Request::is('bolsa-de-trabajo*') ? 'active' : '' }}">
@@ -51,6 +50,7 @@
                         <div class="dropdown-content">
                             <a href="{{ url('/tramites-escolares') }}">Trámites escolares</a>
                             <a href="{{ url('/bolsa-de-trabajo') }}">Bolsa de trabajo</a>
+                    
                         </div>
                     </div>
                 @else

@@ -11,6 +11,8 @@ use App\Models\Multimedia;
 use App\Models\Vacante;
 use App\Models\Licenciatura;
 use App\Models\Programa;
+use App\Models\Evento;
+use App\Models\Tramite;
 
 class PaginasController extends Controller
 {
@@ -81,5 +83,20 @@ class PaginasController extends Controller
         return view('contacto', compact('menus', 'infoFooter'));
     }
 
-    
+    public function calendario()
+    {
+        // Eventos ordenados por la fecha más próxima
+        $eventos = Evento::orderBy('fecha', 'asc')->get();
+        $infoFooter = InfoFooter::all();
+
+        return view('calendario', compact('eventos', 'infoFooter'));
+    }
+
+    public function tramitesEscolares()
+    {
+        $tramites = Tramite::all();
+        $infoFooter = InfoFooter::all(); 
+        
+        return view('tramites', compact('tramites', 'infoFooter'));
+    }
 }

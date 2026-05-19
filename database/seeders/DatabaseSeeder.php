@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
             'icono' => '📅', 
             'titulo' => 'Calendario Escolar', 
             'subtitulo' => 'Fechas y exámenes',
-            'url' => '#'
+            'url' => '/calendario'
         ]);
 
         \App\Models\AccesoRapido::create([
@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\InfoFooter::create(['titulo' => 'Ubicación', 'contenido' => 'Antigua Carr. Tizimín Km 1', 'columna' => 2, 'tipo' => 'texto']);
         \App\Models\InfoFooter::create(['titulo' => 'Teléfono', 'contenido' => '(999) 981 0926', 'columna' => 2, 'tipo' => 'texto']);
 
-        // Datos para Posgrado (NUEVO)
+        // Datos para Posgrado 
         \App\Models\Programa::create([
             'tipo' => 'Maestría', 
             'nombre' => 'Administración Financiera', 
@@ -134,8 +134,14 @@ class DatabaseSeeder extends Seeder
         // Vacantes de Bolsa de Trabajo
         \App\Models\Vacante::factory(20)->create();
 
+        // Eventos del calendario 
+        \App\Models\Evento::factory(12)->create(); 
+
         // Seeder de licenciaturas
         $this->call(LicenciaturaSeeder::class);
+
+        // Tramites escolares
+        \App\Models\Tramite::factory(8)->create();
 
 
 

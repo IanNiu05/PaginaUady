@@ -23,4 +23,10 @@ Route::get('/contacto', [PaginasController::class, 'contacto']);
 // Ruta para bolsa
 Route::get('/bolsa-de-trabajo', [PaginasController::class, 'bolsaTrabajo']);
 
+// Ruta para el calendario 
+Route::get('/calendario', [PaginasController::class, 'calendario']);
+
+// Ruta para los trámites
+Route::get('/tramites-escolares', [App\Http\Controllers\PaginasController::class, 'tramitesEscolares']);
+
 
